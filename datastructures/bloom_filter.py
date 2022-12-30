@@ -5,7 +5,7 @@ from bitarray import bitarray
 
 
 class BloomFilter:
-    """Bloom Filter is a probablistic data structure for set membership.
+    """Bloom Filter is a probablistic data structure to check set membership.
 
     Attributes:
         capacity: Total expected number of element in bloom filter.
@@ -18,7 +18,7 @@ class BloomFilter:
         self.bit_array = bitarray(self._get_size_of_bit_array())
 
     def _get_size_of_bit_array(self) -> int:
-        """Create size of bit array. 
+        """Get size of bit array. 
         
         Formula is based on required number of bits or capacity
         and desired false positive probability.
