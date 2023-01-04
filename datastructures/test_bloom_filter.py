@@ -14,6 +14,11 @@ class TestBloomFilter(unittest.TestCase):
         bloom_filter_size = len(self.bloom_filter.bit_array)
         self.assertEqual(bloom_filter_size, expected_size_of_bloom_filter)
 
+    def test_hash_function_count(self):
+        expected_num_of_hash_functions = 3
+        num_of_hash_functions = self.bloom_filter._get_num_of_hash_functions()
+        self.assertEqual(num_of_hash_functions, expected_num_of_hash_functions)
+
 
 if __name__ == '__main__':
     unittest.main()
