@@ -19,6 +19,14 @@ class TestBloomFilter(unittest.TestCase):
         num_of_hash_functions = self.bloom_filter._get_num_of_hash_functions()
         self.assertEqual(num_of_hash_functions, expected_num_of_hash_functions)
 
+    def test_add_and_check_item(self):
+        values = ['these', 'are', 'random', 'strings']
+        for value in values:
+            self.bloom_filter.add(value)
+
+        for value in values:
+            self.assertFalse(not self.bloom_filter.exists(value))
+
 
 if __name__ == '__main__':
     unittest.main()
