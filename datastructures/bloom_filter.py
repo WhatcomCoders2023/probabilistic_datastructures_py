@@ -67,14 +67,14 @@ class BloomFilter:
             hash_index = mmh3.hash(item, i) % self.size
             self.bit_array[hash_index] = True
 
-    def exists(self, item: str):
+    def exists(self, item: str) -> None:
         """Checks existence of item in bloom filter.
 
         Item is passed through a series of hash functions. If
         any index in the bit array is false, this means that
         the item is definitely not in the set. 
 
-        Otherwise, the item may possibly exist in the set
+        Otherwise, the item may possibly exist in the set.
         Args:
             item: String value of item to be placed in bloom filter.
         """
