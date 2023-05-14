@@ -67,7 +67,7 @@ class BloomFilter:
             hash_index = mmh3.hash(item, i) % self.size
             self.bit_array[hash_index] = True
 
-    def exists(self, item: str) -> None:
+    def exists(self, item: str) -> bool:
         """Checks existence of item in bloom filter.
 
         Item is passed through a series of hash functions. If
@@ -83,3 +83,7 @@ class BloomFilter:
             if self.bit_array[hash_value] == False:
                 return False
         return True
+
+
+if __name__ == '__main__':
+    pass
